@@ -7,7 +7,7 @@ body {
     font-family: 'Poppins', 'Roboto', sans-serif;
 }
 #background {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -42,14 +42,14 @@ body {
 }
 #logo {
     animation: logoIn .8s;
-    position:absolute;
+    position: absolute;
     top: -130px;
     left: -100px;
 }
 #container {
     z-index: 10;
     animation: transitionIn 0.8s;
-    position: fixed;
+    position: absolute;
     height: 100vh;
     width: 60vw;
     background-color: rgba(255, 254, 248, 0.633);
@@ -143,5 +143,5 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 input[type=number] {
-    -moz-appearance:textfield;
+    -moz-appearance: textfield;
 }
