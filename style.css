@@ -47,6 +47,7 @@ body {
     left: -100px;
 }
 #container {
+    overflow: scroll;
     z-index: 10;
     animation: transitionIn 0.8s;
     position: absolute;
@@ -70,7 +71,7 @@ label {
     width: min(60vw, 300px);
     display: flex;
     flex-direction: column;
-    margin: 30px;
+    margin: 20px;
 }
 input {
     box-sizing: border-box;
@@ -89,6 +90,7 @@ input:invalid {
     background-color: rgba(255, 114, 114, 0.161);
 }
 #input-container {
+    height: fit-content;
     width: 60vw;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px black;
