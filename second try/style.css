@@ -9,7 +9,12 @@ body {
 }
 h1 {
     margin: 0;
+    font-size: 2.2em;
 }
+hr {
+    border: 1px solid black;
+}
+/*form area styiling*/
 #container {
     position: absolute;
     right: 0;
@@ -56,6 +61,16 @@ input:placeholder-shown {
 input:valid {
     background-color: rgba(141, 250, 120, 0.4);
 }
+/* 
+when passwords don't match
+
+label[for="confirm-password"]::after {
+    content: "*paswords don't match";
+    font-size: 10px;
+    color: red;
+} */
+
+/*adding logos in front of the labels*/
 label[for="first-name"]:before, label[for="last-name"]:before {
     content: url('images/user.svg');
     height: 20px;
@@ -80,17 +95,74 @@ label[for="password"]:before, label[for="confirm-password"]:before {
     width: 20px;
     margin-right: 5px;
 }
+
+/*logo area styiling*/
+#image-overlap {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    /*using flex to allign stuff*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#image-overlap div {
+    width: 40vw;
+    background-color: rgba(255, 255, 239, 0.713);
+    padding: 30px 20px;
+    text-align: center;
+    box-sizing:border-box;
+    /*using flex to allign stuff*/  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#image-overlap a {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#logo {
+    position: absolute;
+    bottom: 0;
+}
+#image-overlap hr {
+    width: 80%;
+}
+#image-overlap #down-btn {
+    display: none;
+    scale: 2.5;
+}
+#down-btn svg {
+    position: relative;
+    top: 10px;
+    color: black;
+    transition: all .3s;
+}
+#down-btn svg:hover {
+    top: 20px;
+    color: blue;
+}
+/* #image-overlap hr {
+    
+} */
 /*settings for mobile*/
 @media only screen and (max-width: 600px) {
     body {
         font-size: 20px;
     }
     #container {
+        position: relative;
         width: 100vw;
         min-height: fit-content;
         max-height: fit-content;
         margin: 50px 0;
         flex-direction: column;
+        padding-top: 20px;
+    }
+    #input-container {
+        border-radius: 20px;
     }
     .form-row {
         flex-direction: column;
@@ -104,6 +176,19 @@ label[for="password"]:before, label[for="confirm-password"]:before {
     input {
         width: 80vw;
         margin-top: 5px;
+    }
+
+    #image-overlap {
+        position: static;
+        height: fit-content;
+    }
+    #image-overlap div {
+        margin-top: 180px;
+        width: 100vw;
+        padding-bottom: 0;
+    }
+    #image-overlap #down-btn {
+        display: block;
     }
 }
 
