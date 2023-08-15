@@ -183,10 +183,15 @@ button:hover {
         max-height: fit-content;
         margin: 50px 0;
         flex-direction: column;
+        justify-content: center;
         padding-top: 20px;
+    }
+    #container p {
+        text-align: center;
     }
     #input-container {
         border-radius: 20px;
+        margin-bottom: 10px;
     }
     .form-row {
         flex-direction: column;
@@ -201,7 +206,11 @@ button:hover {
         width: 80vw;
         margin-top: 5px;
     }
-
+    button {
+        align-self: center;
+        width: 50%;
+        margin: 0 25vw;
+    }
     #image-overlap {
         position: static;
         height: fit-content;
