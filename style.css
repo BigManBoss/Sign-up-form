@@ -1,149 +1,206 @@
 :root {
-    --padding-label:10px;
+    --label-size: 300px;
+}
+html {
+    scroll-behavior: smooth;
 }
 body {
-    margin: 0;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Poppins', 'Roboto', sans-serif;
-}
-#background {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
+    background-image: url('images/background.jpg');
     margin: 0;
-    padding: 0;
-    object-fit: cover;
 }
-#image-overlap {
-    position: fixed;
-    height: 100vh;
-    width: 40vw;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    flex-direction: column;
-    left: 0;
-    text-align: center;
+h1 {
+    margin: 0;
+    font-size: 2.2em;
 }
-#image-overlap  div{
-    position: relative;
-    height: 30vh;
-    background-color: rgba(240, 248, 255, 0.446);
+hr {
+    border: 1px solid black;
 }
-#image-overlap h1 {
-    margin-top: 50px;
-}
-#image-overlap  div a{
-    position: relative;
-}
-#image-overlap  div h1, #image-overlap  div h3 {
-    text-shadow: 4px 4px 5px solid black;
-    z-index: 100;
-}
-#logo {
-    animation: logoIn .8s;
-    position: absolute;
-    top: -130px;
-    left: -100px;
-}
+/*form area styiling*/
 #container {
-    overflow: scroll;
-    z-index: 10;
-    animation: transitionIn 0.8s;
     position: absolute;
-    height: 100vh;
-    width: 60vw;
-    background-color: rgba(255, 254, 248, 0.633);
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    flex-direction: column;
     right: 0;
-    box-shadow: -10px 0 20px black;
+    min-height: 100vh;
+    max-height: fit-content;
+    width: 60vw;
+    background-color: rgba(240, 248, 255, 0.63);
+    /*using flex to allign stuff*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#input-container {
+    background-color: rgb(255, 255, 255);
+    padding: 50px 10px;
 }
 .form-row {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    margin: 20px 0;
 }
 label {
-    line-height: 45px;
-    width: min(60vw, 300px);
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+    width: var(--label-size);
+    margin: 0 30px;
 }
 input {
-    box-sizing: border-box;
-    height: 35px;
-    border-radius: 5px;
-    border: solid blue 2px;
+    width: var(--label-size);
+    height: 30px;
+    border: 0;
+    border-bottom: solid black 2px;
+    border-radius: 3px;
+    transition: all .3s;
 }
 input:focus {
-    background-color: rgba(114, 114, 255, 0.161);
-    border-radius: 5px;
-    box-shadow: 0 0 6px black;
-    outline: none;
-    transition: all 0.3s;
+    outline: 0;
+    scale: 1.05;
 }
 input:invalid {
-    background-color: rgba(255, 114, 114, 0.161);
+    background-color: rgba(255, 0, 0, 0.3);
 }
-#input-container {
-    height: fit-content;
-    width: 60vw;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 10px black;
-    padding: 20px;
-    box-sizing: border-box;
+input:valid {
+    background-color: rgba(141, 250, 120, 0.4);
 }
-h1 {
-    margin: 10px;
+input:placeholder-shown {
+    background-color: white;
 }
-button {
-    width: 300px;
-    height: 50px;
-    margin: 20px;
-    background-color: rgba(114, 114, 255, 0.161);
-    border-radius: 5px;
-    border: solid blue 2px;
-    font-size: .6em;
+/* 
+when passwords don't match
+
+label[for="confirm-password"]::after {
+    content: "*paswords don't match";
+    font-size: 10px;
+    color: red;
+} */
+
+/*adding logos in front of the labels*/
+label[for="first-name"]:before, label[for="last-name"]:before {
+    content: url('images/user.svg');
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
 }
-.login {
-    font-size: 15px;
-    margin: 20px;
-    margin-top: 0;
+label[for="email"]:before {
+    content: url('images/at-sign.svg');
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+label[for="phone-number"]:before {
+    content: url('images/hash.svg');
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+label[for="password"]:before, label[for="confirm-password"]:before {
+    content: url('images/lock.svg');
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
 }
 
-
-
-@keyframes transitionIn {
-    from {
-        opacity: 0;
-        right: 200px;
+/*logo area styiling*/
+#image-overlap {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    /*using flex to allign stuff*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#image-overlap div {
+    width: 40vw;
+    background-color: rgba(255, 255, 239, 0.713);
+    padding: 30px 20px;
+    text-align: center;
+    box-sizing:border-box;
+    /*using flex to allign stuff*/  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#image-overlap a {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#logo {
+    position: absolute;
+    bottom: 0;
+}
+#image-overlap hr {
+    width: 80%;
+}
+#image-overlap #down-btn {
+    display: none;
+    scale: 2.5;
+}
+#down-btn svg {
+    position: relative;
+    top: 10px;
+    color: black;
+    transition: all .3s;
+}
+#down-btn svg:hover {
+    top: 20px;
+    color: blue;
+}
+/* #image-overlap hr {
+    
+} */
+/*settings for mobile*/
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 20px;
     }
-    to {
-        opacity: 1;
-        right: 0;
+    #container {
+        position: relative;
+        width: 100vw;
+        min-height: fit-content;
+        max-height: fit-content;
+        margin: 50px 0;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+    #input-container {
+        border-radius: 20px;
+    }
+    .form-row {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+    label {
+        margin: 10px 0;
+        width: 80vw;
+    }
+    input {
+        width: 80vw;
+        margin-top: 5px;
+    }
+
+    #image-overlap {
+        position: static;
+        height: fit-content;
+    }
+    #image-overlap div {
+        margin-top: 180px;
+        width: 100vw;
+        padding-bottom: 0;
+    }
+    #image-overlap #down-btn {
+        display: block;
     }
 }
-@keyframes logoIn {
-    from {
-        opacity: 0;
-        top: 0;
-    }
-    to {
-        opacity: 1;
-        top: -130;
-    }
-}
+
 /* number input fix for firefox */
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 input[type=number] {
     -moz-appearance: textfield;
 }

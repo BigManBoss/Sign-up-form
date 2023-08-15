@@ -1,0 +1,149 @@
+:root {
+    --padding-label:10px;
+}
+body {
+    margin: 0;
+    font-size: 30px;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+}
+#background {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+}
+#image-overlap {
+    position: fixed;
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    left: 0;
+    text-align: center;
+}
+#image-overlap  div{
+    position: relative;
+    height: 30vh;
+    background-color: rgba(240, 248, 255, 0.446);
+}
+#image-overlap h1 {
+    margin-top: 50px;
+}
+#image-overlap  div a{
+    position: relative;
+}
+#image-overlap  div h1, #image-overlap  div h3 {
+    text-shadow: 4px 4px 5px solid black;
+    z-index: 100;
+}
+#logo {
+    animation: logoIn .8s;
+    position: absolute;
+    top: -130px;
+    left: -100px;
+}
+#container {
+    overflow: scroll;
+    z-index: 10;
+    animation: transitionIn 0.8s;
+    position: absolute;
+    height: 100vh;
+    width: 60vw;
+    background-color: rgba(255, 254, 248, 0.633);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    right: 0;
+    box-shadow: -10px 0 20px black;
+}
+.form-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+label {
+    line-height: 45px;
+    width: min(60vw, 300px);
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+input {
+    box-sizing: border-box;
+    height: 35px;
+    border-radius: 5px;
+    border: solid blue 2px;
+}
+input:focus {
+    background-color: rgba(114, 114, 255, 0.161);
+    border-radius: 5px;
+    box-shadow: 0 0 6px black;
+    outline: none;
+    transition: all 0.3s;
+}
+input:invalid {
+    background-color: rgba(255, 114, 114, 0.161);
+}
+#input-container {
+    height: fit-content;
+    width: 60vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px black;
+    padding: 20px;
+    box-sizing: border-box;
+}
+h1 {
+    margin: 10px;
+}
+button {
+    width: 300px;
+    height: 50px;
+    margin: 20px;
+    background-color: rgba(114, 114, 255, 0.161);
+    border-radius: 5px;
+    border: solid blue 2px;
+    font-size: .6em;
+}
+.login {
+    font-size: 15px;
+    margin: 20px;
+    margin-top: 0;
+}
+
+
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        right: 200px;
+    }
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+@keyframes logoIn {
+    from {
+        opacity: 0;
+        top: 0;
+    }
+    to {
+        opacity: 1;
+        top: -130;
+    }
+}
+/* number input fix for firefox */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

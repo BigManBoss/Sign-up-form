@@ -9,15 +9,7 @@
     <link rel="stylesheet" href="fonts.css">
 </head>
 <body>
-    <div id="image-overlap">
-        <div>
-            <a href="#"><img src="images/BanKing-logo.png" alt="BanKing logo"  id="logo"></a>
-            <h1>BanKing</h1>
-            <hr>
-            <h3>Where you can reign over your money!</h3>
-            <a href="#container" id="down-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></a>
-        </div>
-    </div>
+    <img src="images/pxfuel.jpg" alt="background image with money" id="background">
     <div id="container">
         <form action="#" method="post">
             <div id="input-container">
@@ -27,7 +19,6 @@
                     <label for="first-name">First Name
                         <input type="text" id="first-name" placeholder="Elon"required>
                     </label>
-                    
                     <label for="last-name">Last Name
                         <input type="text" id="last-name" placeholder="Musk" required>
                     </label>
@@ -38,7 +29,7 @@
                         <input type="email" id="email" placeholder="example@email.com" required>
                     </label>
                     <label for="phone-number">Phone Number
-                        <input type="number" id="phone-number" placeholder="+00123456789">
+                        <input type="tel" id="phone-number" placeholder="+00123456789">
                     </label>
                 </div>
                 <div class="form-row">
@@ -53,6 +44,13 @@
             <button>Create Account</button>
         </form>
         <p class="login">Already have an Account? <a href="#">Log In</a></p>
+    </div>
+    <div id="image-overlap">
+        <div>
+            <a href="#"><img src="images/BanKing-logo.png" alt="BanKing logo"  id="logo"></a>
+            <h1>BanKing</h1>
+            <h3>Where you can reign over your money!</h3>
+        </div>
     </div>
 </body>
 </html>
