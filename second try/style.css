@@ -1,6 +1,9 @@
 :root {
     --label-size: 300px;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-size: 25px;
     font-family: 'Poppins', 'Roboto', sans-serif;
